@@ -3,271 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descontaço Vip - Sua Comunidade de Ofertas Exclusivas</title>
-    <meta name="description" content="Acesse ofertas e cupons secretos no Descontaço Vip. A economia que chega primeiro no seu WhatsApp.">
+    <title>Descontaço Vip - O Fim das Ofertas Perdidas.</title>
+    <meta name="description" content="Pare de perder dinheiro. No Descontaço Vip, as melhores ofertas do Brasil chegam antes para você. Acesse agora.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
+            --primary-color: #1A202C; /* Um cinza quase preto, muito chique */
+            --secondary-color: #2D3748;
             --accent-color: #25D366;
             --accent-hover: #128C7E;
-            --text-color: #ecf0f1;
-            --bg-light: #fff;
-            --bg-dark: #ecf0f1;
+            --text-light: #F7FAFC;
+            --text-dark: #A0AEC0;
+            --bg-light: #FFFFFF;
+            --bg-dark: #F7FAFC;
+            --border-color: #E2E8F0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             background-color: var(--bg-light);
-            color: var(--primary-color);
+            color: var(--secondary-color);
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         /* --- Header --- */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--text-color);
-            padding: 80px 0;
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 100px 0;
             text-align: center;
         }
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        .hero-text {
-            max-width: 500px;
-            text-align: left;
-        }
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             font-weight: 900;
             margin: 0 0 15px 0;
-            line-height: 1.2;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            background: -webkit-linear-gradient(45deg, #ffffff, #a0aec0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            color: var(--text-dark);
         }
-        .hero-mockup img {
-            max-width: 280px;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
+        
         /* --- CTA Button --- */
         .cta-button {
             display: inline-block;
-            background-color: var(--accent-color);
+            background: var(--accent-color);
             color: #fff;
-            padding: 20px 40px;
-            font-size: 1.4rem;
+            padding: 20px 45px;
+            font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 12px;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1), inset 0 -2px 0 rgba(0,0,0,0.2);
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .cta-button:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(18, 140, 126, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15), inset 0 -2px 0 rgba(0,0,0,0.2);
+        }
+        
+        /* --- Trust/Partners Section --- */
+        .trust-section {
+            padding: 30px 0;
+            background-color: var(--bg-dark);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .trust-section .container {
+            text-align: center;
+        }
+        .trust-title {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .logos img {
+            height: 25px; /* Altura padrão para os logos */
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        .logos img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
         }
 
         /* --- Sections --- */
         .section {
             padding: 80px 0;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
             margin-bottom: 60px;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent-color);
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
+            letter-spacing: -1px;
         }
         
         /* Benefits Section */
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
         .benefit-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
         }
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        .benefit-card .icon-container {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .benefit-card .icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
+        .benefit-card .icon-container svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-color);
         }
         .benefit-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        /* How It Works Section */
-        .how-it-works {
-            background-color: var(--bg-dark);
-        }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-        .step-card h3 {
-            font-size: 1.5rem;
-            margin-top: 15px;
-        }
-        .step-number {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            line-height: 60px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-            color: #fff;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        
-        /* Testimonials Section */
-        .testimonial-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-            max-width: 650px;
-            margin: 0 auto;
-        }
-        .testimonial-text {
-            font-size: 1.1rem;
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .testimonial-author {
-            font-weight: 700;
-        }
-        .stars {
-            color: #f1c40f;
             font-size: 1.2rem;
-            margin-top: 10px;
+            margin: 0 0 5px 0;
+            color: var(--primary-color);
         }
 
         /* Final CTA Section */
         .final-cta {
-            background: var(--secondary-color);
-            color: var(--text-color);
+            background: var(--bg-dark);
             text-align: center;
+            border-radius: 20px;
+            margin-top: 50px;
         }
         .final-cta h2 {
             font-size: 2.5rem;
+            letter-spacing: -1px;
             margin-bottom: 15px;
+            color: var(--primary-color);
         }
-
-        /* FAQ Section */
-        .faq-item {
-            background: #fff;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .faq-question {
-            padding: 20px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-question::after {
-            content: '+';
-            font-size: 2rem;
-            transition: transform 0.3s;
-        }
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding: 0 20px;
-        }
-        .faq-answer p {
-            padding-bottom: 20px;
-            margin: 0;
-            line-height: 1.6;
-        }
-
+        
         /* --- Footer --- */
         .footer {
-            background-color: var(--primary-color);
-            color: var(--text-color);
             text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
+            padding: 40px 0;
+            margin-top: 40px;
+            color: var(--text-dark);
+            font-size: 0.9rem;
         }
-
+        
         /* --- Responsive --- */
         @media (max-width: 768px) {
-            .hero-text { text-align: center; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1rem; }
-            .hero-mockup { display: none; } /* Oculta o celular em telas pequenas para não poluir */
-            .section-title { font-size: 2rem; }
+            .hero h1 { font-size: 2.8rem; letter-spacing: -1.5px; }
+            .hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -275,103 +196,74 @@
 
     <header class="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>A Economia que Chega Primeiro no Seu WhatsApp.</h1>
-                    <p>Junte-se ao Descontaço Vip e tenha acesso a um universo de ofertas, cupons e preços baixos que só os membros VIP conhecem.</p>
-                    <a href="https://chat.whatsapp.com/CHRfVsEbIewBud5bjlcpVO" target="_blank" class="cta-button">Entrar no Grupo VIP</a>
-                </div>
-                <div class="hero-mockup">
-                    <img src="https://img.freepik.com/fotos-premium/imagem-de-garota-olhando-surpresa-na-tela-do-celular-emocionante-com-otimas-noticias-notificacao-no-smartphone-de-pe-sobre-fundo-branco_176420-47293.jpg" alt="Garota surpresa com uma oferta no celular">
-                </div>
-            </div>
+            <h1>O Fim das Ofertas Perdidas.</h1>
+            <p>Pare de pagar mais caro. No Descontaço Vip, as melhores promoções, bugs de preço e cupons do Brasil chegam antes para você.</p>
+            <a href="https://chat.whatsapp.com/CHRfVsEbIewBud5bjlcpVO" target="_blank" class="cta-button">Entrar no Grupo VIP</a>
         </div>
     </header>
 
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-title">Ofertas das maiores lojas do Brasil</div>
+            <div class="logos">
+                <img src="https://logodownload.org/wp-content/uploads/2017/05/amazon-logo-1-1.png" alt="Amazon">
+                <img src="https://logodownload.org/wp-content/uploads/2019/09/magalu-logo-0.png" alt="Magazine Luiza">
+                <img src="https://logodownload.org/wp-content/uploads/2016/10/casas-bahia-logo-4.png" alt="Casas Bahia">
+                <img src="https://logodownload.org/wp-content/uploads/2018/05/mercadolivre-logo-6.png" alt="Mercado Livre">
+            </div>
+        </div>
+    </section>
+
     <main>
         <section id="benefits" class="section container">
-            <h2 class="section-title">Por que entrar para o Descontaço VIP?</h2>
+            <h2 class="section-title">Acesso VIP. Economia Real.</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="icon">🎟️</div>
-                    <h3>Cupons Secretos</h3>
-                    <p>Receba cupons de desconto que não são divulgados em nenhum outro lugar. Apenas para membros!</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon">⚡</div>
-                    <h3>Acesso Antecipado</h3>
-                    <p>Saiba das melhores promoções e bugs de preço antes de todo mundo e aproveite antes que acabem.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon">🎯</div>
-                    <h3>Curadoria Inteligente</h3>
-                    <p>Nossa equipe filtra o lixo e envia apenas as ofertas que realmente valem a pena. Economize tempo e dinheiro.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon">✅</div>
-                    <h3>100% Gratuito</h3>
-                    <p>Você não paga absolutamente nada por isso. O único "custo" é a economia que você vai fazer.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section how-it-works">
-            <div class="container">
-                <h2 class="section-title">Como Funciona em 3 Passos Simples</h2>
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <h3>Clique e Entre</h3>
-                        <p>Use nosso link seguro para entrar no grupo do WhatsApp com apenas um clique.</p>
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-12v.75M7.5 9v.75m0 3v.75m0 3V18m-3-12v.75m0 3v.75m0 3v.75M4.5 18v-1.5m15-12v.75m0 3v.75m0 3v.75m0 3V18M9 3.75h6A2.25 2.25 0 0117.25 6v12A2.25 2.25 0 0115 20.25H9A2.25 2.25 0 016.75 18V6A2.25 2.25 0 019 3.75z" /></svg>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <h3>Silencie o Grupo</h3>
-                        <p>Recomendamos silenciar as notificações. Assim, você olha as ofertas quando for mais conveniente.</p>
+                    <div>
+                        <h3>Cupons Secretos</h3>
+                        <p>Receba cupons que as lojas liberam apenas para grupos fechados e parceiros.</p>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <h3>Aproveite e Economize</h3>
-                        <p>Relaxe e espere as melhores promoções do Brasil chegarem até você. Simples assim!</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <div>
+                        <h3>Acesso Antecipado</h3>
+                        <p>Saiba das promoções horas antes do público geral e compre antes que o estoque acabe.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <div>
+                        <h3>Curadoria Premium</h3>
+                        <p>Nossa equipe filtra e testa as ofertas. Você recebe apenas o que realmente vale a pena.</p>
+                    </div>
+                </div>
+                 <div class="benefit-card">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M21.75 12h-2.25m-1.666 5.834L16.5 16.5M4.5 12H2.25m1.666-5.834L5.5 7.5m5.5 5.25v2.25m-5.834 1.666l1.591-1.591M5.5 16.5L7.09 14.91" /></svg>
+                    </div>
+                    <div>
+                        <h3>Bugs de Preço</h3>
+                        <p>Os famosos erros de sistema que geram descontos absurdos. Nós encontramos e avisamos na hora.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section container">
-            <h2 class="section-title">O que os Membros Dizem</h2>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Fantástico! O celular que eu queria apareceu com R$ 500 de desconto. O grupo se pagou por anos! Recomendo demais."</p>
-                <p class="testimonial-author">- Juliana R.</p>
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-            </div>
-        </section>
-
-        <section class="section final-cta">
-            <div class="container">
-                <h2>Junte-se a mais de <span id="member-count">587</span> membros satisfeitos!</h2>
-                <p>Vagas limitadas para garantir a qualidade do grupo. Garanta a sua agora!</p>
+        <section class="section container final-cta">
+             <div style="padding: 60px 20px;">
+                <h2>Pronto para economizar de verdade?</h2>
+                <p>As vagas são limitadas para manter a exclusividade das ofertas. Garanta a sua.</p>
                 <br>
-                <a href="https://chat.whatsapp.com/CHRfVsEbIewBud5bjlcpVO" target="_blank" class="cta-button">Quero Minha Vaga VIP!</a>
-            </div>
-        </section>
-
-        <section class="section container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">Preciso pagar para participar?</div>
-                    <div class="faq-answer"><p>Não! O acesso ao grupo Descontaço Vip é e sempre será 100% gratuito. Nosso objetivo é criar uma comunidade de economia.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Vou receber muitas mensagens (spam)?</div>
-                    <div class="faq-answer"><p>De forma alguma. Nosso compromisso é com a qualidade. Enviamos apenas as melhores ofertas do dia, selecionadas a dedo, para não sobrecarregar seu celular.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">As lojas são confiáveis?</div>
-                    <div class="faq-answer"><p>Sim. A segurança é nossa prioridade. Só divulgamos promoções de lojas grandes, seguras e conhecidas no mercado brasileiro.</p></div>
-                </div>
-            </div>
+                <a href="https://chat.whatsapp.com/CHRfVsEbIewBud5bjlcpVO" target="_blank" class="cta-button">Entrar no Grupo VIP Agora</a>
+             </div>
         </section>
     </main>
 
@@ -379,44 +271,5 @@
         <p>&copy; 2025 Descontaço Vip. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        // Script para o FAQ Interativo (Accordion)
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                const answer = item.querySelector('.faq-answer');
-                const isActive = item.classList.contains('active');
-
-                // Opcional: Fechar outros itens abertos
-                // faqItems.forEach(i => {
-                //     i.classList.remove('active');
-                //     i.querySelector('.faq-answer').style.maxHeight = null;
-                // });
-
-                if (isActive) {
-                    item.classList.remove('active');
-                    answer.style.maxHeight = null;
-                } else {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                }
-            });
-        });
-
-        // Script para animação de surgimento ao rolar
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
 </body>
 </html>
